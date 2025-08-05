@@ -1,2 +1,4 @@
 #Evitar subir los node_modules al repositorio
 node_modules/
+
+package-lock.json

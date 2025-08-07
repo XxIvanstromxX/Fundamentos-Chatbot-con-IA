@@ -1,0 +1,19 @@
+### Metodo get para acceder a la ruta raiz
+get http://localhost:3000/home
+
+
+### Metodo get para obtener todos los productos
+get http://localhost:3000/producto/all
+
+
+### Metodo post para crear un nuevo producto
+post http://localhost:3000/producto/create
+Content-Type: application/json
+
+{
+    "id": "4",
+    "nombre": "Producto de prueba",
+    "precio": 100,
+    "descripcion": "Este es un producto de prueba",
+    "categoria": "Categoria de prueba"
+}

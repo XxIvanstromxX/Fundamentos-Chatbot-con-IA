@@ -27,7 +27,6 @@ Este repositorio contiene el material del curso de fundamentos para la creación
 
 **Características técnicas:**
 - **Framework:** Express 5.1.0
-- **Puerto:** 3000
 - **Script de desarrollo:** `npm run dev` (con --watch)
 
 **Rutas implementadas:**

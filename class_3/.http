@@ -1,0 +1,17 @@
+### metodo post para crear un producto
+post http://localhost:3000/products/create
+Content-Type: application/json
+
+{
+  "name": "Producto 2",
+  "price": 1000,
+  "description": "Descripción del producto 2",
+  "category": "Categoría 2",
+  "brand": "Marca 2",
+  "stock": 500,
+  "size": "S",
+  "color": "blue"
+}
+
+### metodo get para obtener todos los productos
+get http://localhost:3000/products

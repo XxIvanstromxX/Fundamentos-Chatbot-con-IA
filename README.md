@@ -11,9 +11,9 @@
 <img alt="License" src="https://img.shields.io/badge/License-ISC-6366F1?style=flat-square" />
 
 <p>
-<a href="#clase-1-introducción-a-expressjs">Clase 1</a> •
-<a href="#clase-2-arquitectura-mvc-y-gestión-de-productos">Clase 2</a> •
-<a href="#clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a>
+<a href="#-clase-1-introducción-a-expressjs">Clase 1</a> •
+<a href="#-clase-2-arquitectura-mvc-y-gestión-de-productos">Clase 2</a> •
+<a href="#%EF%B8%8F-clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a>
 </p>
 
 </div>

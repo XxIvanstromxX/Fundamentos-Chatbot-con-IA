@@ -1,5 +1,23 @@
 # 🤖 Fundamentos de Chatbot con IA - CCOL
 
+<div align="center">
+
+<img alt="chatbot banner" src="https://img.shields.io/badge/Chatbots-IA-7A5EF8?style=for-the-badge&logo=authelia&logoColor=white" />
+
+<br/>
+
+<a href="#-instructor"><img alt="Instructor" src="https://img.shields.io/badge/Instructor-Iván%20Martínez-0ea5e9?style=flat-square" /></a>
+<a href="#-tecnologías-utilizadas"><img alt="Tech" src="https://img.shields.io/badge/Stack-Node.js%20%7C%20Express%20%7C%20MongoDB-22c55e?style=flat-square&logo=node.js&logoColor=white" /></a>
+<img alt="License" src="https://img.shields.io/badge/License-ISC-6366F1?style=flat-square" />
+
+<p>
+<a href="#clase-1-introducción-a-expressjs">Clase 1</a> •
+<a href="#clase-2-arquitectura-mvc-y-gestión-de-productos">Clase 2</a> •
+<a href="#clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a>
+</p>
+
+</div>
+
 Este repositorio contiene el material del curso de fundamentos para la creación de chatbots desarrollado para **CCOL (Club de Ciencias & Open Lab)**. El curso está diseñado para enseñar los conceptos básicos de desarrollo backend con Node.js y Express, como base para la construcción de chatbots inteligentes.
 
 ## 👨‍💻 Instructor
@@ -13,9 +31,27 @@ Este repositorio contiene el material del curso de fundamentos para la creación
 - Establecer las bases para la integración de sistemas de chatbot
 - Preparar el terreno para futuras implementaciones de IA
 
+---
+
+## 🧭 Tabla de contenidos
+
+- [👨‍💻 Instructor](#-instructor)
+- [🎯 Objetivos del Curso](#-objetivos-del-curso)
+- [📚 Contenido del Curso](#-contenido-del-curso)
+  - [Clase 1: Introducción a Express.js](#clase-1-introducción-a-expressjs)
+  - [Clase 2: Arquitectura MVC y Gestión de Productos](#clase-2-arquitectura-mvc-y-gestión-de-productos)
+  - [Clase 3: Persistencia con MongoDB y Mongoose](#clase-3-persistencia-con-mongodb-y-mongoose)
+- [🚀 Instrucciones de Instalación](#-instrucciones-de-instalación)
+- [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
+- [📝 Próximos Pasos](#-próximos-pasos)
+- [🤝 Contribuciones](#-contribuciones)
+- [📄 Licencia](#-licencia)
+
 ## 📚 Contenido del Curso
 
-### Clase 1: Introducción a Express.js
+---
+
+### 📦 Clase 1: Introducción a Express.js
 **Ubicación:** `class_1/`
 
 **Conceptos cubiertos:**
@@ -34,7 +70,9 @@ Este repositorio contiene el material del curso de fundamentos para la creación
 - `GET /` - Endpoint de saludo básico
 - `GET /tienda` - Ruta de bienvenida al negocio
 
-### Clase 2: Arquitectura MVC y Gestión de Productos
+---
+
+### 🧱 Clase 2: Arquitectura MVC y Gestión de Productos
 **Ubicación:** `class_2/`
 
 **Conceptos cubiertos:**
@@ -76,7 +114,9 @@ class_2/
 }
 ```
 
-### Clase 3: Persistencia con MongoDB y Mongoose
+---
+
+### 🗄️ Clase 3: Persistencia con MongoDB y Mongoose
 **Ubicación:** `class_3/`
 
 **Conceptos cubiertos:**
@@ -128,10 +168,12 @@ class_3/
 ```
 
 **Configuración de base de datos:**
-- Edita `config/db.js` y reemplaza `"Tu mongo uri aquí"` por tu cadena de conexión de MongoDB. El `dbName` usado es `"Chatbot"`.
+
+> ⚙️ Importante: edita `config/db.js` y reemplaza `"Tu mongo uri aquí"` por tu cadena de conexión de MongoDB. El `dbName` usado es `"Chatbot"`.
 
 **Pruebas rápidas:**
-- En el archivo `.http` hay ejemplos listos para probar `POST /products/create` y `GET /products` con la extensión REST Client.
+
+> 🧪 Tip: en el archivo `.http` hay ejemplos listos para probar `POST /products/create` y `GET /products` con la extensión REST Client.
 
 ## 🚀 Instrucciones de Instalación
 
@@ -139,21 +181,21 @@ class_3/
 - Node.js (versión 14 o superior)
 - npm o yarn
 
-### Ejecutar Clase 1
+### ▶️ Ejecutar Clase 1
 ```bash
 cd class_1
 npm install
 npm run dev
 ```
 
-### Ejecutar Clase 2
+### ▶️ Ejecutar Clase 2
 ```bash
 cd class_2
 npm install
 npm run dev
 ```
 
-### Ejecutar Clase 3
+### ▶️ Ejecutar Clase 3
 ```bash
 cd class_3
 npm install

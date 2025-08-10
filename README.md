@@ -27,6 +27,7 @@ Este repositorio contiene el material del curso de fundamentos para la creación
 
 **Características técnicas:**
 - **Framework:** Express 5.1.0
+- **Puerto:** 3000
 - **Script de desarrollo:** `npm run dev` (con --watch)
 
 **Rutas implementadas:**
@@ -75,6 +76,63 @@ class_2/
 }
 ```
 
+### Clase 3: Persistencia con MongoDB y Mongoose
+**Ubicación:** `class_3/`
+
+**Conceptos cubiertos:**
+- Conexión a MongoDB con Mongoose
+- Definición de modelos y validaciones (Producto)
+- Controladores asíncronos y manejo de errores
+- Rutas REST básicas con prefijo `/products`
+- Uso de archivo `.http` para probar endpoints
+
+**Características técnicas:**
+- **Framework:** Express 5.1.0
+- **Base de datos:** MongoDB (Mongoose 8.17.1)
+- **Herramientas de desarrollo:** Nodemon 3.1.10, Morgan 1.10.1
+- **Script de desarrollo:** `npm run dev`
+
+**Arquitectura:**
+```
+class_3/
+├── app.js                          # Servidor principal y middlewares
+├── config/
+│   └── db.js                       # Conexión a MongoDB (dbName: "Chatbot")
+├── controllers/
+│   └── productController.js        # Lógica de negocio de productos
+├── models/
+│   ├── productModel.js             # Esquema y modelo Product
+│   └── userModel.js                # (vacío por ahora)
+├── routes/
+│   └── products.js                 # Definición de rutas de productos
+└── .http                           # Ejemplos de requests
+```
+
+**API Endpoints (base: `/products`):**
+- `GET /products` - Obtener todos los productos (desde MongoDB)
+- `POST /products/create` - Crear un nuevo producto
+
+**Modelo de datos (Product):**
+```javascript
+{
+  name: String (required, unique, trim),
+  description: String (required, trim),
+  size: String (required, trim),
+  stock: Number (required, min: 0),
+  price: Number (required, min: 0),
+  brand: String (required, trim),
+  category: String (required, trim),
+  color: String (required, trim),
+  createdAt: Date (default: Date.now)
+}
+```
+
+**Configuración de base de datos:**
+- Edita `config/db.js` y reemplaza `"Tu mongo uri aquí"` por tu cadena de conexión de MongoDB. El `dbName` usado es `"Chatbot"`.
+
+**Pruebas rápidas:**
+- En el archivo `.http` hay ejemplos listos para probar `POST /products/create` y `GET /products` con la extensión REST Client.
+
 ## 🚀 Instrucciones de Instalación
 
 ### Prerequisitos
@@ -95,12 +153,21 @@ npm install
 npm run dev
 ```
 
+### Ejecutar Clase 3
+```bash
+cd class_3
+npm install
+# Antes de iniciar, configura tu URI en config/db.js
+npm run dev
+```
+
 ## 🛠️ Tecnologías Utilizadas
 
 - **Node.js** - Entorno de ejecución de JavaScript
 - **Express.js** - Framework web para Node.js
 - **Morgan** - Middleware para logging HTTP
 - **Nodemon** - Herramienta para desarrollo con auto-reload
+- **Mongoose** - ODM para MongoDB
 
 ## 📝 Próximos Pasos
 

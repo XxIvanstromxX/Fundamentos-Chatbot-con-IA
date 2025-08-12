@@ -14,6 +14,7 @@
 <a href="#-clase-1-introducción-a-expressjs">Clase 1</a> •
 <a href="#-clase-2-arquitectura-mvc-y-gestión-de-productos">Clase 2</a> •
 <a href="#%EF%B8%8F-clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a>
+<a href="#-clase-4-autenticación-jwt-y-protección-de-rutas">Clase 4</a> •
 </p>
 
 </div>
@@ -41,6 +42,7 @@ Este repositorio contiene el material del curso de fundamentos para la creación
   - [Clase 1: Introducción a Express.js](#-clase-1-introducción-a-expressjs)
   - [Clase 2: Arquitectura MVC y Gestión de Productos](#-clase-2-arquitectura-mvc-y-gestión-de-productos)
   - [Clase 3: Persistencia con MongoDB y Mongoose](#%EF%B8%8F-clase-3-persistencia-con-mongodb-y-mongoose)
+  - [Clase 4: Autenticación JWT y Protección de Rutas](#clase-4-autenticación-jwt-y-protección-de-rutas)
 - [🚀 Instrucciones de Instalación](#-instrucciones-de-instalación)
 - [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
 - [📝 Próximos Pasos](#-próximos-pasos)
@@ -175,7 +177,96 @@ class_3/
 
 > 🧪 Tip: en el archivo `.http` hay ejemplos listos para probar `POST /products/create` y `GET /products` con la extensión REST Client.
 
-## 🚀 Instrucciones de Instalación
+---
+
+### � Clase 4: Autenticación JWT y Protección de Rutas
+**Ubicación:** `class_4/`
+
+**Conceptos cubiertos:**
+- Registro y login de usuarios
+- Hash de contraseñas con bcrypt
+- Emisión y verificación de JSON Web Tokens (JWT)
+- Middleware de protección (`protect`) para rutas seguras
+- Uso de variables de entorno (`.env`) para credenciales y secretos
+- Asociación de productos al usuario creador (`createdBy`)
+
+**Características técnicas:**
+- **Framework:** Express 5.1.0
+- **Base de datos:** MongoDB (Mongoose 8.17.1)
+- **Autenticación:** JSON Web Tokens (`jsonwebtoken`)
+- **Hashing:** bcryptjs 3.0.2
+- **Variables de entorno:** dotenv 17.2.1
+- **Script de desarrollo:** `npm run dev`
+
+**Arquitectura:**
+```
+class_4/
+├── .env                          # Variables de entorno (no versionar)
+├── app.js                        # Servidor y montaje de rutas
+├── config/
+│   └── db.js                     # Conexión MongoDB via env vars
+├── controllers/
+│   ├── authController.js         # Registro / Login
+│   └── productController.js      # Productos (añade createdBy)
+├── middlewares/
+│   └── authMiddleware.js         # Verifica JWT y carga req.user
+├── models/
+│   ├── userModel.js              # Modelo User
+│   └── productModel.js           # Modelo Product extendido
+├── routes/
+│   ├── auth.js                   # Rutas /auth
+│   └── products.js               # Rutas /products (POST protegido)
+└── .http                         # Requests de ejemplo (auth + productos)
+```
+
+**API Endpoints:**
+- `POST /auth/register` - Registrar usuario
+- `POST /auth/login` - Iniciar sesión y obtener token
+- `GET /products` - Listar productos (público)
+- `POST /products/create` - Crear producto (requiere token válido)
+
+**Modelo User:**
+```javascript
+{
+  username: String,
+  email: String,
+  password: String, // almacenado con hash bcrypt
+  createdAt: Date
+}
+```
+
+**Modelo Product (nuevo campo):**
+```javascript
+{
+  // ...campos previos clase 3
+  createdBy: String // id del usuario creador
+}
+```
+
+**Middleware protect (flujo):**
+1. Lee header Authorization (Bearer token)
+2. Verifica firma y expiración
+3. Busca usuario y lo asigna a `req.user`
+4. Continúa con la ruta protegida
+
+**Variables de entorno (.env):**
+```
+MONGO_URI=...
+DATABASE_NAME=...
+JWT_SECRET=...
+JWT_EXPIRATION=1h
+PORT=3000
+```
+
+> 🔐 Tip: Usa un `JWT_SECRET` largo y aleatorio. No compartas tu `.env`.
+
+**Pruebas rápidas (`.http`):**
+1. `POST /auth/register`
+2. `POST /auth/login` (copiar token)
+3. `POST /products/create` con `Authorization: Bearer <token>`
+4. `GET /products`
+
+## �🚀 Instrucciones de Instalación
 
 ### Prerequisitos
 - Node.js (versión 14 o superior)
@@ -188,6 +279,13 @@ npm install
 npm run dev
 ```
 
+### ▶️ Ejecutar Clase 4
+```bash
+cd class_4
+npm install
+# Crea .env con MONGO_URI, DATABASE_NAME, JWT_SECRET, JWT_EXPIRATION, PORT (opcional)
+npm run dev
+```
 ### ▶️ Ejecutar Clase 2
 ```bash
 cd class_2
@@ -210,6 +308,9 @@ npm run dev
 - **Morgan** - Middleware para logging HTTP
 - **Nodemon** - Herramienta para desarrollo con auto-reload
 - **Mongoose** - ODM para MongoDB
+- **bcryptjs** - Hash de contraseñas
+- **jsonwebtoken** - Emisión y validación de tokens
+- **dotenv** - Variables de entorno
 
 ## 📝 Próximos Pasos
 

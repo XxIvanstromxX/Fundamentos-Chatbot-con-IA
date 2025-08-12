@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
+  // Validaciones básicas de campos
   name: {
     type: String,
     required: true,
@@ -44,7 +45,7 @@ const productSchema = new Schema({
     trim: true,
   },
   createdBy: {
-    type: String,
+    type: String, // Mejor usar ObjectId ref: 'User'
     required: true,
     trim: true,
   },

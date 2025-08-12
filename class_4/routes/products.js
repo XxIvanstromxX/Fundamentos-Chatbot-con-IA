@@ -4,9 +4,9 @@ const {
   getAllProducts,
   createProduct,
 } = require("../controllers/productController");
-const { protect } = require("../middlewares/authMiddleware");
+const { protect } = require("../middlewares/authMiddleware"); // Middleware JWT
 
-router.get("/", getAllProducts);
-router.post("/create", protect, createProduct);
+router.get("/", getAllProducts); // Público lectura
+router.post("/create", protect, createProduct); // Protegido creación
 
 module.exports = router;

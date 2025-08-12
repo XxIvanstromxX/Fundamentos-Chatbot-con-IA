@@ -13,7 +13,7 @@
 <p>
 <a href="#-clase-1-introducción-a-expressjs">Clase 1</a> •
 <a href="#-clase-2-arquitectura-mvc-y-gestión-de-productos">Clase 2</a> •
-<a href="#%EF%B8%8F-clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a>
+<a href="#%EF%B8%8F-clase-3-persistencia-con-mongodb-y-mongoose">Clase 3</a> •
 <a href="#-clase-4-autenticación-jwt-y-protección-de-rutas">Clase 4</a> •
 </p>
 
@@ -179,7 +179,7 @@ class_3/
 
 ---
 
-### � Clase 4: Autenticación JWT y Protección de Rutas
+### 🔐 Clase 4: Autenticación JWT y Protección de Rutas
 **Ubicación:** `class_4/`
 
 **Conceptos cubiertos:**

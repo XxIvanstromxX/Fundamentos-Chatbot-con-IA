@@ -1,11 +1,11 @@
-const Product = require("../models/productModel");
+const Product = require("../models/productModel"); // Modelo de producto
 
 const getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find({});
+    const products = await Product.find({}); // Se puede paginar para limitar tamaño de respuesta
     res.status(200).json(products);
   } catch (err) {
-    res.status(500).json({ message: "Server ERROR" });
+    res.status(500).json({ message: "Server ERROR" }); // No filtrar detalles
   }
 };
 
@@ -13,7 +13,7 @@ const createProduct = async (req, res) => {
   const { name, description, size, stock, price, brand, category, color } =
     req.body;
 
-  const user = req.user;
+  const user = req.user; // Inyectado desde middleware protect
 
   if (
     !name ||
@@ -41,7 +41,7 @@ const createProduct = async (req, res) => {
       createdBy: user._id,
     });
 
-    await newProduct.save();
+    await newProduct.save(); // Persistir nuevo producto
     return res
       .status(201)
       .json({ message: "Se creo con exito", product: newProduct });

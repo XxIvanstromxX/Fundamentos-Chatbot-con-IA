@@ -1,0 +1,38 @@
+### metodo post para crear un producto
+post http://localhost:3000/products/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODlhYzRhNGM0NjA2MDNmMWM1NmU5MzciLCJlbWFpbCI6Iml2YW5AZXhhbXBsZS5jb20iLCJpYXQiOjE3NTQ5NzM3NDUsImV4cCI6MTc1NDk3NzM0NX0.huY76DLch6dweIuk3P1EorDr6JpVcjmVlxfE6h7uCwM
+
+{
+  "name": "Sudadera Nike",
+  "price": 1000,
+  "description": "Sudadera de la marca Nike, talla M,",
+  "category": "Categoría Ropa Deportiva",
+  "brand": "Nike",
+  "stock": 20,
+  "size": "M",
+  "color": "blue"
+}
+
+### metodo get para obtener todos los productos
+get http://localhost:3000/products
+
+### Metodo post para registrar un usuario
+post http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "Ivan M",
+  "email": "ivan@example.com",
+  "password": "12345678"
+}
+
+### Metodo post para iniciar sesión
+post http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "ivan@example.com",
+  "password": "12345678"
+}
+

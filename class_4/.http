@@ -1,7 +1,7 @@
 ### metodo post para crear un producto
 post http://localhost:3000/products/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODlhYzRhNGM0NjA2MDNmMWM1NmU5MzciLCJlbWFpbCI6Iml2YW5AZXhhbXBsZS5jb20iLCJpYXQiOjE3NTQ5NzM3NDUsImV4cCI6MTc1NDk3NzM0NX0.huY76DLch6dweIuk3P1EorDr6JpVcjmVlxfE6h7uCwM
+Authorization: Bearer <token>
 
 {
   "name": "Sudadera Nike",

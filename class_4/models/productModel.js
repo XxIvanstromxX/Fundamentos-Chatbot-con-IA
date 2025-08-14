@@ -44,11 +44,6 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
-  createdBy: {
-    type: String, // Mejor usar ObjectId ref: 'User'
-    required: true,
-    trim: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
